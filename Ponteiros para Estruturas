@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct r_aluno {
+    int matr;
+    float nota1;
+    float nota2;
+};
+
+void ler_aluno(struct r_aluno *);
+void imp_aluno(struct r_aluno *);
+
+int main(void) {
+    struct r_aluno aluno;
+
+    ler_aluno (&aluno);
+    imp_aluno (&aluno);
+
+    return 0;
+}
+
+void ler_aluno(struct r_aluno *al) {
+
+    //Para verificar dados dos alunos
+    printf("Digite os dados do aluno\n");
+    printf("Matricula: ");
+    scanf("%d", &al ->matr);
+
+    //Nota de cada alunos matriculados
+    printf("Primeira nota: ");
+    scanf("%f", &al ->nota1);
+
+    //Nota de cada alunos matriculados
+    printf("Segunda nota: ");
+    printf("%f", &al ->nota2);
+
+}
+void imp_aluno (struct r_aluno *al) {
+
+    printf("Matr: %d Notas: %5.2f %5.2f ", al ->matr, al ->nota1, al ->nota2);
+    printf("Media: %5.2f\n", (al ->nota1 + al ->nota2) /2);
+}
